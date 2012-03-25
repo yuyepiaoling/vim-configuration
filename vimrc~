@@ -40,3 +40,10 @@ let html_number_lines=1
 let html_ignore_folding=1
 
 let html_use_css=1
+
+"ÉèÖÃ±àÂë×ÖÌå
+set termencoding=chinese
+set fileencodings=ucs-bom,utf-8,cp936,cp950,latin1
+set ambiwidth=double
+set guifont=YaHei\ Consolas\ Hybrid:h12
+
