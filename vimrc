@@ -62,7 +62,7 @@ if has('gui_running') && has('gui_win32') && has('libcall')
     "映射 Alt+Enter 切换全屏vim
     map <a-enter> <esc>:call ToggleFullScreen()<cr>
     "Vim启动的时候自动调用InitVim 以去除Vim的白色边框
-    autocmd GUIEnter * call libcallnr(g:MyVimLib, 'InitVim', 0)
+    "autocmd GUIEnter * call libcallnr(g:MyVimLib, 'InitVim', 0)
 
     let g:VimAlpha = 240
     function! SetAlpha(alpha)
@@ -76,6 +76,26 @@ if has('gui_running') && has('gui_win32') && has('libcall')
         call libcall(g:MyVimLib, 'SetAlpha', g:VimAlpha)
     endfunction
     "增加Vim窗体的不透明度
+    "
+    "
+    "
+    "
+    "
+    "
+" 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
+set ignorecase
+set smartcase
+" 搜索到文件两端时不重新搜索
+set nowrapscan
+" 实时搜索
+set incsearch
+" 搜索时高亮显示被找到的文本
+set hlsearch
+" 关闭错误声音
+set noerrorbells
+set novisualbell
+set t_vb=
+    "
     nmap <s-t> <esc>:call SetAlpha(10)<cr>
     "增加Vim窗体的透明度
     nmap <s-y> <esc>:call SetAlpha(-10)<cr>
