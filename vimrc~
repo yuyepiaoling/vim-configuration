@@ -14,6 +14,9 @@ syntax on
 
 filetype on
 
+" 检测文件类型插件
+filetype plugin on
+
 "自动缩进
 set cindent
 
@@ -32,6 +35,21 @@ set fdm=syntax
 "设置自动配色方案
 
 colorscheme torte
+set scrolloff=6
+" 设定 tab 长度为 4
+set tabstop=4
+" 设置按BackSpace的时候可以一次删除掉4个空格
+set softtabstop=4
+" 设定 << 和 >> 命令移动时的宽度为 4
+set shiftwidth=4
+set smarttab
+set history=1024
+" 不突出显示当前行
+set nocursorline
+" 覆盖文件时不备份
+set nobackup
+" 自动切换当前目录为当前文件所在的目录
+set autochdir
 
 "html generator settings
 
@@ -62,7 +80,7 @@ if has('gui_running') && has('gui_win32') && has('libcall')
     "映射 Alt+Enter 切换全屏vim
     map <a-enter> <esc>:call ToggleFullScreen()<cr>
     "Vim启动的时候自动调用InitVim 以去除Vim的白色边框
-    autocmd GUIEnter * call libcallnr(g:MyVimLib, 'InitVim', 0)
+    "autocmd GUIEnter * call libcallnr(g:MyVimLib, 'InitVim', 0)
 
     let g:VimAlpha = 240
     function! SetAlpha(alpha)
@@ -76,6 +94,26 @@ if has('gui_running') && has('gui_win32') && has('libcall')
         call libcall(g:MyVimLib, 'SetAlpha', g:VimAlpha)
     endfunction
     "增加Vim窗体的不透明度
+    "
+    "
+    "
+    "
+    "
+    "
+" 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
+set ignorecase
+set smartcase
+" 搜索到文件两端时不重新搜索
+set nowrapscan
+" 实时搜索
+set incsearch
+" 搜索时高亮显示被找到的文本
+set hlsearch
+" 关闭错误声音
+set noerrorbells
+set novisualbell
+set t_vb=
+    "
     nmap <s-t> <esc>:call SetAlpha(10)<cr>
     "增加Vim窗体的透明度
     nmap <s-y> <esc>:call SetAlpha(-10)<cr>
